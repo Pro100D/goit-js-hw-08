@@ -4,6 +4,11 @@ const form = document.querySelector(".feedback-form");
 const LOCALSTORAGE_KEY = "feedback-form-state";
 const formData = {};
 
+
+
+
+populateTexr();
+
 form.addEventListener("submit", onSubmitForm);
 
 form.addEventListener(
@@ -24,19 +29,35 @@ function onSubmitForm(event) {
 	localStorage.removeItem(LOCALSTORAGE_KEY);
 }
 
-const load = key => {
-	try {
-		const serializedState = localStorage.getItem(key);
+// const load = key => {
+// 	try {
+// 		const serializedState = localStorage.getItem(key);
 
-		return serializedState === null ? undefined : JSON.parse(serializedState);
-	} catch (error) {
-		console.error("Get state error: ", error.message);
-	}
-};
+// 		return serializedState === null ? undefined : JSON.parse(serializedState);
+// 	} catch (error) {
+// 		console.error("Get state error: ", error.message);
+// 	}
+// };
 
-const storageData = load(LOCALSTORAGE_KEY);
+// const storageData = load(LOCALSTORAGE_KEY);
+// console.log(storageData);
 
-if (storageData) {
-	serializedState.email = storageData.email;
-	serializedState.message = storageData.message;
-}
+// if (storageData === storageData.emeil) {
+//   serializedState.email = storageData.email;
+// }
+
+
+// ___________________________________________________________________________________________________
+// ___________________________________________________________________________________________________
+
+// function populateTexr() {
+// 	const savadMessage = localStorage.getItem(LOCALSTORAGE_KEY);
+// 	const parseSavedMessage = JSON.parse(savadMessage);
+
+// 	console.log(parseSavedMessage.email);
+
+// 	if (savadMessage) {
+// 		form[0].value === parseSavedMessage.email;
+// 		form[1].textContent === parseSavedMessage.message;
+//   }
+// }
