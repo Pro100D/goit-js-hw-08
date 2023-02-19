@@ -29,35 +29,12 @@ function onSubmitForm(event) {
 	localStorage.removeItem(LOCALSTORAGE_KEY);
 }
 
-// const load = key => {
-// 	try {
-// 		const serializedState = localStorage.getItem(key);
+function populateTexr() {
+	const savadMessage = localStorage.getItem(LOCALSTORAGE_KEY);
+	const parseSavedMessage = JSON.parse(savadMessage);
 
-// 		return serializedState === null ? undefined : JSON.parse(serializedState);
-// 	} catch (error) {
-// 		console.error("Get state error: ", error.message);
-// 	}
-// };
-
-// const storageData = load(LOCALSTORAGE_KEY);
-// console.log(storageData);
-
-// if (storageData === storageData.emeil) {
-//   serializedState.email = storageData.email;
-// }
-
-
-// ___________________________________________________________________________________________________
-// ___________________________________________________________________________________________________
-
-// function populateTexr() {
-// 	const savadMessage = localStorage.getItem(LOCALSTORAGE_KEY);
-// 	const parseSavedMessage = JSON.parse(savadMessage);
-
-// 	console.log(parseSavedMessage.email);
-
-// 	if (savadMessage) {
-// 		form[0].value === parseSavedMessage.email;
-// 		form[1].textContent === parseSavedMessage.message;
-//   }
-// }
+	if (savadMessage) {
+		form.elements.message.value === parseSavedMessage.message || '';
+		form.elements.email.value = parseSavedMessage.email || '';
+	}
+}
